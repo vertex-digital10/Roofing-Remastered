@@ -5,6 +5,11 @@
 
 @custom-variant dark (&:is(.dark *));
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
 @theme inline {
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
@@ -49,7 +54,6 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-/* LIGHT MODE - though mostly overridden by forcing dark sections */
 :root {
   --app-font-sans: 'DM Sans', sans-serif;
   --app-font-display: 'Outfit', sans-serif;
@@ -130,11 +134,15 @@
   }
 
   body {
-    @apply font-sans antialiased bg-background text-foreground selection:bg-accent/30;
+    @apply font-sans antialiased bg-background text-foreground selection:bg-accent/30 overflow-x-hidden;
   }
   
   h1, h2, h3, h4, h5, h6 {
     @apply font-display tracking-tight;
+  }
+
+  *:focus-visible {
+    outline: none;
   }
 }
 
@@ -151,6 +159,31 @@
   }
   
   .glass {
-    @apply bg-background/70 backdrop-blur-md border border-white/10 shadow-xl;
+    @apply bg-background/70 backdrop-blur-xl border border-white/10 shadow-2xl;
+  }
+
+  .text-outline {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+    color: transparent;
+  }
+  
+  .text-outline-accent {
+    -webkit-text-stroke: 1px rgba(249, 115, 22, 0.3);
+    color: transparent;
+  }
+
+  /* Custom global scrollbar for app-like feel */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--primary));
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.25);
   }
 }
