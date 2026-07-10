@@ -20,8 +20,8 @@ const formSchema = z.object({
   message: z.string().optional(),
 });
 
-const inputClasses = "bg-white/5 border-white/10 text-white placeholder:text-white/30 focus-visible:ring-accent focus-visible:border-accent transition-all duration-300 h-14 rounded-2xl hover:bg-white/10 hover:border-white/20";
-const labelClasses = "text-slate-300 font-bold uppercase tracking-widest text-[10px] mb-2";
+const inputClasses = "bg-[#36251d] border-[#70543e] text-[#f6e9d9] placeholder:text-[#cfae86]/60 focus-visible:ring-[#b97c43] focus-visible:border-[#b97c43] transition-all duration-300 h-14 rounded-2xl hover:bg-[#433128] hover:border-[#8b6546]";
+const labelClasses = "text-[#cfae86] font-bold uppercase tracking-widest text-[10px] mb-2";
 
 export function ContactForm() {
   const { toast } = useToast();
@@ -67,24 +67,24 @@ export function ContactForm() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
-            className="flex flex-col items-center justify-center py-16 px-8 text-center bg-white/5 backdrop-blur-md rounded-3xl border border-white/10"
+            className="flex flex-col items-center justify-center py-16 px-8 text-center bg-[#36251d] backdrop-blur-md rounded-3xl border border-[#70543e]"
           >
             <motion.div 
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ type: "spring", damping: 15, delay: 0.2 }}
-              className="w-24 h-24 rounded-full bg-green-500/20 flex items-center justify-center mb-8 border border-green-500/30"
+              className="w-24 h-24 rounded-full bg-[#b97c43]/20 flex items-center justify-center mb-8 border border-[#b97c43]/30"
             >
-              <CheckCircle2 className="w-12 h-12 text-green-400" />
+              <CheckCircle2 className="w-12 h-12 text-[#e8c58f]" />
             </motion.div>
-            <h3 className="text-4xl font-display font-black text-white mb-4">Request Received</h3>
-            <p className="text-slate-300 text-lg mb-10 max-w-md">
+            <h3 className="text-4xl font-display font-black text-[#f6e9d9] mb-4">Request Received</h3>
+            <p className="text-[#ddccb7] text-lg mb-10 max-w-md">
               Thank you for reaching out. Our dispatch team will contact you shortly to schedule your free inspection.
             </p>
             <Button 
               variant="outline" 
               onClick={() => setIsSuccess(false)}
-              className="bg-transparent border-white/20 text-white hover:bg-white/10 rounded-full px-8 h-12 font-bold tracking-wider uppercase text-sm"
+              className="bg-transparent border-[#70543e] text-[#f6e9d9] hover:bg-[#433128] rounded-full px-8 h-12 font-bold tracking-wider uppercase text-sm"
             >
               Submit Another
             </Button>
@@ -153,12 +153,12 @@ export function ContactForm() {
                               <SelectValue placeholder="Select a service" />
                             </SelectTrigger>
                           </FormControl>
-                          <SelectContent className="bg-primary border-white/10 text-white rounded-xl">
-                            <SelectItem value="Roofing" className="hover:bg-white/10 focus:bg-white/10 cursor-pointer py-3 rounded-lg">Roofing (Repair/Replace)</SelectItem>
-                            <SelectItem value="Storm Damage" className="hover:bg-white/10 focus:bg-white/10 cursor-pointer py-3 rounded-lg">Storm Damage & Claims</SelectItem>
-                            <SelectItem value="Siding" className="hover:bg-white/10 focus:bg-white/10 cursor-pointer py-3 rounded-lg">Siding</SelectItem>
-                            <SelectItem value="Gutters" className="hover:bg-white/10 focus:bg-white/10 cursor-pointer py-3 rounded-lg">Gutters</SelectItem>
-                            <SelectItem value="Windows" className="hover:bg-white/10 focus:bg-white/10 cursor-pointer py-3 rounded-lg">Windows</SelectItem>
+                          <SelectContent className="bg-[#241812] border-[#70543e] text-[#f6e9d9] rounded-xl">
+                            <SelectItem value="Roofing" className="hover:bg-[#433128] focus:bg-[#433128] cursor-pointer py-3 rounded-lg">Roofing (Repair/Replace)</SelectItem>
+                            <SelectItem value="Storm Damage" className="hover:bg-[#433128] focus:bg-[#433128] cursor-pointer py-3 rounded-lg">Storm Damage & Claims</SelectItem>
+                            <SelectItem value="Siding" className="hover:bg-[#433128] focus:bg-[#433128] cursor-pointer py-3 rounded-lg">Siding</SelectItem>
+                            <SelectItem value="Gutters" className="hover:bg-[#433128] focus:bg-[#433128] cursor-pointer py-3 rounded-lg">Gutters</SelectItem>
+                            <SelectItem value="Windows" className="hover:bg-[#433128] focus:bg-[#433128] cursor-pointer py-3 rounded-lg">Windows</SelectItem>
                           </SelectContent>
                         </Select>
                         <FormMessage className="text-accent text-xs" />
@@ -187,18 +187,18 @@ export function ContactForm() {
 
                 <Button 
                   type="submit" 
-                  className="w-full h-16 rounded-2xl bg-white text-primary hover:bg-slate-200 text-lg font-black tracking-widest uppercase transition-all duration-300 group shadow-[0_0_40px_rgba(255,255,255,0.15)] hover:shadow-[0_0_60px_rgba(255,255,255,0.25)]" 
+                  className="w-full h-16 rounded-2xl bg-[#b97c43] text-[#231710] hover:bg-[#c88a52] text-lg font-black tracking-[0.18em] uppercase transition-all duration-300 group shadow-[0_0_40px_rgba(185,124,67,0.18)] hover:shadow-[0_0_60px_rgba(185,124,67,0.3)]"
                   disabled={createContactRequest.isPending}
                 >
                   {createContactRequest.isPending ? (
                     <>
-                      <Loader2 className="mr-3 h-6 w-6 animate-spin text-accent" />
+                      <Loader2 className="mr-3 h-6 w-6 animate-spin text-[#231710]" />
                       <span className="opacity-80">Sending Request...</span>
                     </>
                   ) : (
                     <span className="flex items-center gap-3">
-                      Request Free Inspection 
-                      <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform text-accent" />
+                      Get Free Inspection 
+                      <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform text-[#231710]" />
                     </span>
                   )}
                 </Button>
