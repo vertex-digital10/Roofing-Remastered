@@ -1,4 +1,4 @@
-import { Router, type IRouter } from "express";
+import { Router, type IRouter, type Request, type Response } from "express";
 import { db, contactRequestsTable } from "@workspace/db";
 import {
   CreateContactRequestBody,
@@ -7,7 +7,7 @@ import {
 
 const router: IRouter = Router();
 
-router.post("/contact-requests", async (req, res): Promise<void> => {
+router.post("/contact-requests", async (req: Request, res: Response): Promise<void> => {
   const parsed = CreateContactRequestBody.safeParse(req.body);
   if (!parsed.success) {
     req.log.warn({ errors: parsed.error.message }, "Invalid contact request");
