@@ -1,0 +1,11 @@
+name = "usa-storm-roofing"
+account_id = "b7f856426880e1e437f4f6dc10fd51e8"
+compatibility_date = "2026-07-10"
+
+# Deploy static assets from the `dist` directory. This makes `wrangler deploy`
+# or `wrangler pages publish` target the built site.
+[assets]
+directory = "./dist"
+
+# For Cloudflare Pages you can run locally from this folder:
+# npx wrangler pages publish ./dist --project-name=usa-storm-roofing
