@@ -78,18 +78,6 @@ importers:
         specifier: ^0.4.1
         version: 0.4.1
     devDependencies:
-      '@esbuild/win32-x64':
-        specifier: 0.27.3
-        version: 0.27.3
-      '@rollup/rollup-win32-x64-msvc':
-        specifier: 4.62.2
-        version: 4.62.2
-      '@tailwindcss/oxide-win32-x64-msvc':
-        specifier: 4.3.2
-        version: 4.3.2
-      lightningcss-win32-x64-msvc:
-        specifier: 1.32.0
-        version: 1.32.0
       prettier:
         specifier: ^3.9.4
         version: 3.9.4
@@ -1275,6 +1263,7 @@ packages:
   '@esbuild/win32-x64@0.27.3':
     resolution: {integrity: sha512-4uJGhsxuptu3OcpVAzli+/gWusVGwZZHTlS63hh++ehExkVT8SgiEf7/uC/PclrPPkLhZqGgCTjd0VWLo6xMqA==}
     engines: {node: '>=18'}
+    cpu: [x64]
     os: [win32]
 
   '@esbuild/win32-x64@0.28.1':
@@ -2136,6 +2125,7 @@ packages:
 
   '@rollup/rollup-win32-x64-msvc@4.62.2':
     resolution: {integrity: sha512-BfzEnDJOt9T8M989/lA37EcJgat01wLRnoi5dQf3QzOH7jzpqTAzdDbVfRljVr5r+jzKqpbHeyOfAaXxAd0PAA==}
+    cpu: [x64]
     os: [win32]
 
   '@scalar/helpers@0.9.0':
@@ -2266,6 +2256,7 @@ packages:
   '@tailwindcss/oxide-win32-x64-msvc@4.3.2':
     resolution: {integrity: sha512-QI9BO7KlNZsp2GuO0jwAAj5jCDABOKXRkCk2XuKTSaNEFSdfzqswYVTtCHBNKHLsqyjFyFkqlDiwkNbTYSssMQ==}
     engines: {node: '>= 20'}
+    cpu: [x64]
     os: [win32]
 
   '@tailwindcss/oxide@4.3.2':
@@ -3133,6 +3124,7 @@ packages:
   lightningcss-win32-x64-msvc@1.32.0:
     resolution: {integrity: sha512-Amq9B/SoZYdDi1kFrojnoqPLxYhQ4Wo5XiL8EVJrVsB8ARoC1PWW6VGtT0WKCemjy8aC+louJnjS7U18x3b06Q==}
     engines: {node: '>= 12.0.0'}
+    cpu: [x64]
     os: [win32]
 
   lightningcss@1.32.0:
@@ -4314,7 +4306,8 @@ snapshots:
   '@esbuild/win32-x64@0.25.12':
     optional: true
 
-  '@esbuild/win32-x64@0.27.3': {}
+  '@esbuild/win32-x64@0.27.3':
+    optional: true
 
   '@esbuild/win32-x64@0.28.1':
     optional: true
@@ -5252,7 +5245,8 @@ snapshots:
   '@rollup/rollup-win32-x64-gnu@4.62.2':
     optional: true
 
-  '@rollup/rollup-win32-x64-msvc@4.62.2': {}
+  '@rollup/rollup-win32-x64-msvc@4.62.2':
+    optional: true
 
   '@scalar/helpers@0.9.0': {}
 
@@ -5352,7 +5346,8 @@ snapshots:
   '@tailwindcss/oxide-win32-arm64-msvc@4.3.2':
     optional: true
 
-  '@tailwindcss/oxide-win32-x64-msvc@4.3.2': {}
+  '@tailwindcss/oxide-win32-x64-msvc@4.3.2':
+    optional: true
 
   '@tailwindcss/oxide@4.3.2':
     optionalDependencies:
@@ -6185,7 +6180,8 @@ snapshots:
   lightningcss-win32-arm64-msvc@1.32.0:
     optional: true
 
-  lightningcss-win32-x64-msvc@1.32.0: {}
+  lightningcss-win32-x64-msvc@1.32.0:
+    optional: true
 
   lightningcss@1.32.0:
     dependencies:
