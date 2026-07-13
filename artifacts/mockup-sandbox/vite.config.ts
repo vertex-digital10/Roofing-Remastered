@@ -7,11 +7,8 @@ import { mockupPreviewPlugin } from "./mockupPreviewPlugin";
 
 const rawPort = process.env.PORT ?? "5173";
 
-const port = Number(rawPort);
-
-if (Number.isNaN(port) || port <= 0) {
-  throw new Error(`Invalid PORT value: "${rawPort}"`);
-}
+const parsedPort = Number(rawPort);
+const port = Number.isFinite(parsedPort) && parsedPort > 0 ? parsedPort : 5173;
 
 const basePath = process.env.BASE_PATH ?? "/";
 const normalizedBasePath =
