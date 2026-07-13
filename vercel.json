@@ -1,4 +1,5 @@
 {
+  "framework": "vite",
   "installCommand": "pnpm install --frozen-lockfile",
   "buildCommand": "pnpm --filter @workspace/usa-storm-roofing build",
   "outputDirectory": "artifacts/usa-storm-roofing/dist/public"
